@@ -12,22 +12,11 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    implementation 'com.squareup.okhttp:okhttp:2.7.5'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
-    implementation 'org.assertj:assertj-core:3.13.2'
+    // TODO add dependencies
 }
 
 test {
     useJUnitPlatform()
 }
 
-jar {
-    manifest {
-        attributes "Main-Class": "com.mkaszynski.javatools.nomaven.Planetary"
-    }
-
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
+// TODO create fat jar
